@@ -1,14 +1,14 @@
-(defproject puppetlabs/stockpile "0.1.0-SNAPSHOT"
+(defproject org.openvoxproject/stockpile "0.1.0-SNAPSHOT"
   :description "Simple, durable Clojure queuing library"
-  :url "https://github.com/puppetlabs/stockpile"
+  :url "https://github.com/openvoxproject/stockpile"
   :license {:name "Apache License Version 2.0"
             :url "http://www.apache.org/licenses/LICENSE-2.0"}
-  :dependencies [[puppetlabs/i18n "0.4.3"]
+  :dependencies [[org.openvoxproject/i18n "0.4.3"]
                  [org.clojure/clojure "1.8.0"]]
-  :plugins [[puppetlabs/i18n "0.4.3"]]
+  :plugins [[org.openvoxproject/i18n "0.4.3"]]
   :profiles {:dev {:dependencies [[org.apache.commons/commons-lang3 "3.4"]]}}
 
-  :deploy-repositories [["releases" {:url "https://clojars.org/repo"
-                                     :username :env/clojars_jenkins_username
-                                     :password :env/clojars_jenkins_password
+  :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
+                                     :username :env/CLOJARS_USERNAME
+                                     :password :env/CLOJARS_PASSWORD
                                      :sign-releases false}]])
