@@ -13,9 +13,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: |
-            8
-            11
             17
+            21
       - uses: actions/cache@v3
         with:
           key: apt-${{ matrix.jdk }}
@@ -24,9 +23,7 @@ jobs:
             /var/cache/apt/archives/*.deb
       - run: sudo -i apt-get update
       - run: sudo -i apt-get -y install leiningen
-      - name: lein test (jdk 8)
-        run: dev/java-env --expect-major 8 "${JAVA_HOME_8_X64}" dev/run-test --use-sudo
-      - name: lein test (jdk 11)
-        run: dev/java-env --expect-major 11 "${JAVA_HOME_11_X64}" dev/run-test --use-sudo
       - name: lein test (jdk 17)
         run: dev/java-env --expect-major 17 "${JAVA_HOME_17_X64}" dev/run-test --use-sudo
+      - name: lein test (jdk 21)
+        run: dev/java-env --expect-major 21 "${JAVA_HOME_21_X64}" dev/run-test --use-sudo
