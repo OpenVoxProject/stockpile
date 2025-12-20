@@ -1,4 +1,4 @@
-# stockpile [![Clojars Project](https://img.shields.io/clojars/v/puppetlabs/stockpile.svg)](https://clojars.org/puppetlabs/stockpile) ![main](https://github.com/puppetlabs/stockpile/workflows/main/badge.svg)
+# stockpile [![Clojars Project](https://img.shields.io/clojars/v/org.openvoxproject/stockpile.svg)](https://clojars.org/org.openvoxproject/stockpile) ![main](https://github.com/openvoxproject/stockpile/workflows/main/badge.svg)
 
 A simple, durable Clojure queueing library.  While this is believed to
 be reasonably solid, it is still relatively new, and the API or
@@ -114,6 +114,7 @@ effective way to increase performance.
 ## License
 
 Copyright © 2016 Puppet Labs Inc
+Copyright © 2025 Vox Pupuli
 
 Distributed under the Apache License Version 2.0.  See ./LICENSE for
 details.
