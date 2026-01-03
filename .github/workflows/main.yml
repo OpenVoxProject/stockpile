@@ -25,7 +25,7 @@ jobs:
           clj-kondo: latest        # Clj-kondo
           cljstyle: latest             # cljstyle
           zprint: latest                # zprint
-      - uses: actions/cache@v3
+      - uses: actions/cache@v5
         with:
           key: apt-${{ matrix.jdk }}
           path: |
