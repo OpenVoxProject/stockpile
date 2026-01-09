@@ -43,8 +43,6 @@ jobs:
           path: |
             ~/.m2/repository
             /var/cache/apt/archives/*.deb
-      - run: sudo -i apt-get update
-      - run: sudo -i apt-get -y install leiningen
       - name: lein test (jdk ${{ matrix.java }})
         run: dev/java-env --expect-major ${{ matrix.java }} "${JAVA_HOME_${{ matrix.java }}_X64}" dev/run-test --use-sudo
 
