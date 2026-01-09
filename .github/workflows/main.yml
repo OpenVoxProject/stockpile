@@ -13,6 +13,12 @@ permissions:
 jobs:
   lein-test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java:
+          - 21
+          - 17
     steps:
       - uses: actions/checkout@v6
         with:
@@ -20,9 +26,7 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
-          java-version: |
-            17
-            21
+          java-version: ${{ matrix.java }}
       - name: Install Clojure tools
         uses: DeLaGuardo/setup-clojure@13.4
         with:
@@ -35,16 +39,14 @@ jobs:
           zprint: latest                # zprint
       - uses: actions/cache@v5
         with:
-          key: apt-${{ matrix.jdk }}
+          key: apt-${{ matrix.java }}
           path: |
             ~/.m2/repository
             /var/cache/apt/archives/*.deb
       - run: sudo -i apt-get update
       - run: sudo -i apt-get -y install leiningen
-      - name: lein test (jdk 17)
-        run: dev/java-env --expect-major 17 "${JAVA_HOME_17_X64}" dev/run-test --use-sudo
-      - name: lein test (jdk 21)
-        run: dev/java-env --expect-major 21 "${JAVA_HOME_21_X64}" dev/run-test --use-sudo
+      - name: lein test (jdk ${{ matrix.java }})
+        run: dev/java-env --expect-major ${{ matrix.java }} "${JAVA_HOME_${{ matrix.java }}_X64}" dev/run-test --use-sudo
 
   tests:
     if: always()
