@@ -8,7 +8,7 @@
   :dependencies [[org.openvoxproject/i18n ~i18n-version]
                  [org.clojure/clojure "1.12.4"]]
   :plugins [[org.openvoxproject/i18n ~i18n-version]]
-  :profiles {:dev {:dependencies [[org.apache.commons/commons-lang3 "3.18.0"]]}}
+  :profiles {:dev {:dependencies [[org.apache.commons/commons-lang3 "3.20.0"]]}}
 
   :deploy-repositories [["releases" {:url "https://clojars.org/repo"
                                      :username :env/CLOJARS_USERNAME
