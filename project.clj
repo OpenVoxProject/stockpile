@@ -1,6 +1,6 @@
 (def i18n-version "1.0.4")
 
-(defproject org.openvoxproject/stockpile "1.0.2"
+(defproject org.openvoxproject/stockpile "1.0.3-SNAPSHOT"
   :description "Simple, durable Clojure queuing library"
   :url "https://github.com/openvoxproject/stockpile"
   :license {:name "Apache License Version 2.0"
