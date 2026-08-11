@@ -1,4 +1,4 @@
-(def i18n-version "1.0.4")
+(def i18n-version "1.0.5")
 
 (defproject org.openvoxproject/stockpile "1.0.3-SNAPSHOT"
   :description "Simple, durable Clojure queuing library"
