@@ -8,3 +8,7 @@
 /mp-*
 /resources/locales.clj
 /resources/puppetlabs/stockpile/*.class
+/.bundle
+/.vendor
+/vendor
+/Gemfile.lock
